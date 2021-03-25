@@ -1,0 +1,8 @@
+rofi.lines: 3
+rofi.eh: 2
+rofi.fullscreen: false
+rofi.bw: 0
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.font: System San Francisco Display 18
+rofi.theme: ~/.config/rofi/gruvbox-dark.rasi
