@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH=/opt/maestro-cli/bin:$PATH
+export PATH=/opt/maestro-cli/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/aerkoc/.oh-my-zsh"
@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-saml2aws-auto)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,6 +112,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Aliases
+alias dev="/usr/local/bin/obo-dev"
+alias sbx="/usr/local/bin/obo-sbx"
+alias prod="/usr/local/bin/obo-prod"
+alias libg="~/projects/..."
+alias vpn='echo `secret-tool lookup keepassxc password | keepassxc-cli show -q ~/Passwords.kdbx "....." -a Password` | snx'
+
 # For vim fzf-ripgrep
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
@@ -122,3 +129,12 @@ fi
 source <(kubectl completion zsh)
 alias k=kubectl
 complete -F __start_kubectl k
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /home/aerkoc/.local/bin/virtualenvwrapper.sh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
